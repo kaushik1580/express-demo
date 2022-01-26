@@ -15,7 +15,27 @@ const getCourse = async (id) => {
   return course;
 }
 
+const getAllCourse = async () => {
+  const course = await Course.find();
+  return course;
+}
+
+const updateCourse = async (id, body) => {
+  const course = await Course.updateOne({
+    _id: id,
+  }, {
+    $set: {
+      name: body.name
+    }
+  });
+  // course.name = body.name;
+  // await course.save();
+  return course;
+}
+
 module.exports = {
   addCourse,
-  getCourse
+  getCourse,
+  getAllCourse,
+  updateCourse
 }

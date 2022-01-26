@@ -12,12 +12,25 @@ const addCourse = async (req, res) => {
 
 const getCourse = async (req, res) => {
   const id = req.params.id;
-  const course = await itemservice.addCourse(id);
+  const course = await itemservice.getCourse(id);
   return res.json(course);
 }
 
+const getAllCourse = async (req, res) => {
+  const course = await itemservice.getAllCourse();
+  return res.json(course);
+}
+
+const updateCourse = async (req, res) => {
+  const id = req.params.id;
+  const body = req.body;
+  const course = await itemservice.updateCourse(id, body);
+  return res.json(course);
+}
 module.exports = {
   getCourseParam,
   addCourse,
-  getCourse
+  getCourse,
+  getAllCourse,
+  updateCourse
 }
