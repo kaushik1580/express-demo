@@ -27,10 +27,17 @@ const updateCourse = async (req, res) => {
   const course = await itemservice.updateCourse(id, body);
   return res.json(course);
 }
+
+const deleteCourse = async (req, res) => {
+  const id = req.params.id;
+  const course = await itemservice.deleteCourse(id);
+  return res.json(course);
+}
 module.exports = {
   getCourseParam,
   addCourse,
   getCourse,
   getAllCourse,
-  updateCourse
+  updateCourse,
+  deleteCourse
 }

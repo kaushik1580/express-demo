@@ -66,18 +66,20 @@ router.put('/api/courses/:id', itemcontroller.updateCourse)
 
 /////// DELETE REQUEST ///////////
 
-router.delete('/api/courses/:id', (request, response) => {
-  const course = courses.find(c => c.id === parseInt(request.params.id));
-  if (!course) return response.status(404).send("Course not found");
+router.delete('/api/courses/:id', itemcontroller.deleteCourse)
 
-  // delete
-  const index = courses.indexOf(course);
-  courses.splice(index, 1);
+//  (request, response) => {
+//    const course = courses.find(c => c.id === parseInt(request.params.id));
+//    if (!course) return response.status(404).send("Course not found");
 
-  response.send(course);
+//    // delete
+//    const index = courses.indexOf(course);
+//    courses.splice(index, 1);
 
-  //retun the course
-})
+//    response.send(course);
+
+//    //retun the course
+//  }
 
 console.log('reached');
 

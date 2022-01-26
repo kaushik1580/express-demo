@@ -33,9 +33,20 @@ const updateCourse = async (id, body) => {
   return course;
 }
 
+const deleteCourse = async (id) => {
+  const course = await Course.deleteOne({
+    _id: id,
+  });
+  // course.name = body.name;
+  // await course.save();
+  return course;
+}
+
+
 module.exports = {
   addCourse,
   getCourse,
   getAllCourse,
-  updateCourse
+  updateCourse,
+  deleteCourse
 }
