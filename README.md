@@ -1,5 +1,5 @@
 # express-demo
-This project is just for learning purpose.
+This project is just for learning purpose for express js. Api's were made on express.js framework
 
 The application has a simple implementation of get,post,put,delete operations. Integrated with mongodb database with basic CRUD operations.
 
